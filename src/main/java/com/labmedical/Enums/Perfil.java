@@ -1,4 +1,4 @@
-package com.labmedical.ENum;
+package com.labmedical.Enums;
 
 public enum Perfil {
     PACIENTE, MEDICO, ADMIN;

@@ -1,12 +1,15 @@
 package com.labmedical.Dto;
 
 import com.labmedical.Entities.Endereco;
-import lombok.Data;
 import jakarta.validation.constraints.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
 import java.time.LocalDate;
 import java.util.List;
 
 @Data
+@AllArgsConstructor
 public class PacienteDTO {
 
     @NotBlank
@@ -34,7 +37,7 @@ public class PacienteDTO {
     private String estadoCivil;
 
     @NotBlank
-    @Pattern(regexp = "\\(\\d{2}\\) 9 \\d{4}-\\d{4}")
+    @Pattern(regexp = "\\(\\d{2}\\) \\d{5}-\\d{4}")
     private String telefone;
 
     @Email
@@ -45,19 +48,19 @@ public class PacienteDTO {
     private String naturalidade;
 
     @NotBlank
-    @Pattern(regexp = "\\(\\d{2}\\) 9 \\d{4}-\\d{4}")
+    @Pattern(regexp = "\\(\\d{2}\\) \\d{5}-\\d{4}")
     private String contatoEmergencia;
 
     private List<String> alergias;
-
     private List<String> cuidadosEspecificos;
 
     private String convenio;
     private String numeroConvenio;
     private LocalDate validadeConvenio;
 
-    private Endereco endereco;
+    @NotNull
+    private Long idUsuario;
 
     @NotNull
-    private Long usuarioId;
+    private Endereco endereco;
 }

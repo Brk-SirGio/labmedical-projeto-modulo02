@@ -2,7 +2,7 @@ package com.labmedical.Services;
 
 import com.labmedical.Dto.UsuarioDTO;
 import com.labmedical.Entities.Usuario;
-import com.labmedical.ENum.Perfil;
+import com.labmedical.Enums.Perfil;
 import com.labmedical.Repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

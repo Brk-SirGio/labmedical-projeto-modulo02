@@ -1,6 +1,6 @@
 package com.labmedical.Entities;
 
-import com.labmedical.ENum.Perfil;
+import com.labmedical.Enums.Perfil;
 import lombok.Data;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
