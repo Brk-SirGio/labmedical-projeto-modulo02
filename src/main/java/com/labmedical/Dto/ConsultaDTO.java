@@ -1,19 +1,17 @@
-package com.labmedical.Entities;
+package com.labmedical.Dto;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-@Entity
 @Data
-public class Consulta {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+@AllArgsConstructor
+public class ConsultaDTO {
     @NotBlank
     @Size(min = 8, max = 64)
     private String motivoConsulta;
@@ -30,13 +28,10 @@ public class Consulta {
 
     private String medicacaoReceitada;
 
-    @Size(min = 16, max = 256)
+    @Size(min = 7, max = 256)
     private String dosagemPrecaucoes;
 
+
     @NotNull
-    @ManyToOne
-    @JoinColumn(name = "paciente_id")
-    private Paciente paciente;
-
+    private Long idPaciente;
 }
-
